@@ -29,6 +29,17 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - id: "auth"
+      uses: "google-github-actions/auth@v1"
+      with:
+        credentials_json: "${{secrets.GCP_SA_KEY}}"
+    - name: Set up gcloud Cloud SDK environment
+      uses: google-github-actions/setup-gcloud@v2.1.0
+    - name: "Use gcloud CLI"
+      run: "gcloud info"
+    
+    
+    
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
