@@ -58,8 +58,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image> educative </image>
-						<tags><tag>us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo</tag></tags>
+						<image>educative</image>
 					</to>
 				</configuration>
 			</plugin>
