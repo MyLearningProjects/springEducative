@@ -60,6 +60,9 @@
 					<to>
 						<image>educative/${project.artifactId}:s1</image>
 					</to>
+					<tags>
+						<tag>us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo</tag>
+					</tags>
 				</configuration>
 			</plugin>
 		</plugins>
