@@ -41,8 +41,8 @@ jobs:
       run: docker login
     - name: Build with Maven
       run: mvn clean compile jib:build
-    - name: Rename tag
-      run: docker tag educative us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo
+    #- name: Rename tag
+    #  run: docker tag educative us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo
     - name: Push to registry
       run: docker push us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo
 
