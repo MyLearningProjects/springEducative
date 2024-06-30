@@ -58,14 +58,9 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>educative/${project.artifactId}</image>
-						<tags>
-							<tag>us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo</tag>
-						</tags>
+						<image>educative/${project.artifactId}: us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo</image>
+						
 					</to>
-					<tags>
-						<tag>us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo</tag>
-					</tags>
 				</configuration>
 			</plugin>
 		</plugins>
