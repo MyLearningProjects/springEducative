@@ -58,7 +58,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>gcr.io/cool-subset-426206-j9/educative</image>
+						<image>us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo</image>
 					</to>
 				</configuration>
 			</plugin>
