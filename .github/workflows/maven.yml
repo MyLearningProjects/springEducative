@@ -44,7 +44,7 @@ jobs:
     - name: Build with Maven and Push
       run: mvn clean compile jib:build
     - name: Get kubectl credentials
-      run: gcloud container clusters get-credentials --zone us-central1-c my-first-cluster-1
+      run: gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c
     - name: Config details
       run: kubectl config view --raw
     - name: Kubectl test
