@@ -42,7 +42,7 @@ jobs:
     - name: Build with Maven and Push
       run: mvn clean compile jib:build
     - name: Get kubectl credentials
-      run: gcloud container clusters get-credentials --zone us-central1 my-first-cluster-1
+      run: gcloud container clusters get-credentials --zone us-central1-c my-first-cluster-1
     - name: Deploy helm chart
       run: helm install educative .devops/educative-helm --version 0.1.0
     #- name: Rename tag
