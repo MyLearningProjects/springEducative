@@ -46,7 +46,9 @@ jobs:
     - name: Get kubectl credentials
       run: gcloud container clusters get-credentials --zone us-central1-c my-first-cluster-1
     - name: Kubectl test
-      run: kubectl config get-contexts | kubectl get deployments
+      run: kubectl create clusterrolebinding service-reader-pod \
+            --clusterrole=service-reader  \
+            --serviceaccount=default:default
     - name: Deploy helm chart
       run: helm install educative .devops/educative-helm --version 0.1.0
     #- name: Rename tag
