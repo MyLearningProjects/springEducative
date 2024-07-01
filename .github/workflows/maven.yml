@@ -35,6 +35,8 @@ jobs:
       uses: google-github-actions/setup-gcloud@v2.1.0
     - name: "Use gcloud CLI"
       run: "gcloud info"
+    - name: GKE gcloud auth plugin install
+      run: gcloud components install gke-gcloud-auth-plugin
     - name: "Docker auth" # us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo
       run: gcloud auth configure-docker us-central1-docker.pkg.dev
     - name: "Docker login"
