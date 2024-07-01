@@ -45,6 +45,8 @@ jobs:
       run: mvn clean compile jib:build
     - name: Get kubectl credentials
       run: gcloud container clusters get-credentials --zone us-central1-c my-first-cluster-1
+    - name: Kubectl test
+      run: kubectl config get-contexts
     - name: Deploy helm chart
       run: helm install educative .devops/educative-helm --version 0.1.0
     #- name: Rename tag
