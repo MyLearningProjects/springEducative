@@ -48,7 +48,7 @@ jobs:
     - name: Kubectl test
       run: kubectl config get-contexts
     - name: Deploy helm chart
-      run: helm install educative .devops/educative-helm --version 0.1.0
+      run: helm install educative .devops/educative-helm --version 0.1.0 --namspace gke_cool-subset-426206-j9_us-central1-c_my-first-cluster-1
     #- name: Rename tag
     #  run: docker tag educative us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo
     #- name: Push to registry
