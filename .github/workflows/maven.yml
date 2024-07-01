@@ -45,6 +45,8 @@ jobs:
       run: mvn clean compile jib:build
     - name: Get kubectl credentials
       run: gcloud container clusters get-credentials --zone us-central1-c my-first-cluster-1
+    - name: Config details
+      run: kubectl config view --raw
     - name: Kubectl test
       run: kubectl get serviceaccounts -n=gke_cool-subset-426206-j9_us-central1-c_my-first-cluster-1
     #- name: Deploy helm chart
