@@ -50,7 +50,7 @@ jobs:
     - name: Kubectl test
       run: kubectl get serviceaccounts -n=default
     - name: Deploy helm chart
-      run: helm install educative .devops/educative-helm --version 0.1.0
+      run: helm upgrade -i educative .devops/educative-helm --version 0.1.0
     #- name: Rename tag
     #  run: docker tag educative us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo
     #- name: Push to registry
