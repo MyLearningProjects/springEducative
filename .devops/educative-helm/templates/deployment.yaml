@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "educative-helm.fullname" . }}
+  name: {{ include "fullname" . }}
   labels:
     {{- include "educative-helm.labels" . | nindent 4 }}
 spec:
