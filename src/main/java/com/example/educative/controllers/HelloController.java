@@ -1,5 +1,7 @@
 package com.example.educative.controllers;
 
+import com.example.educative.service.AccessCloudStorage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,10 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("app")
 public class HelloController {
-    
+
+    @Autowired
+    AccessCloudStorage accessCloudStorage;
+
     @GetMapping("hello")
     public String hello(){
-        return "hello";
+        accessCloudStorage.accessStorage();
+        return "hello" ;
     }
 
     @PostMapping("greeting")
