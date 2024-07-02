@@ -47,10 +47,12 @@ jobs:
       run: gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c
     - name: Kubectl create secret
       run: kubectl create secret docker-registry gcr-access-token \
-          --docker-server=us.gcr.io \
-          --docker-username=gke_cool-subset-426206-j9_us-central1-c_my-first-cluster-1 \
+          --docker-server=https://gcr.io \
+          --docker-username=oauth3accesstoken \
           --docker-password="$(gcloud auth print-access-token)" \
           --docker-email=any@valid.email
+    - name: Patch secret with account
+      run: kubectl patch serviceaccount gke_cool-subset-426206-j9_us-central1-c_my-first-cluster-1 -p '{"imagePullSecrets": [{"name": "gcr-json-key"}]}'
     - name: Config details
       run: kubectl config view --raw
     - name: Kubectl test
