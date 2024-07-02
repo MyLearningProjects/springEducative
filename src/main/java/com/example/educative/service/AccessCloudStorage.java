@@ -19,8 +19,9 @@ public class AccessCloudStorage {
     @Value("gs://cool-subset-426206-j9/intJava.txt")
     private Resource gcsResource;
 
-    public void accessStorage(){
+    public String accessStorage(){
         log.info( "FileName::: "+ gcsResource.getFilename());
+        return gcsResource.getFilename();
     }
 
 }

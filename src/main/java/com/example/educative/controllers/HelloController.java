@@ -19,8 +19,7 @@ public class HelloController {
 
     @GetMapping("hello")
     public String hello(){
-        accessCloudStorage.accessStorage();
-        return "hello" ;
+        return "hello " + accessCloudStorage.accessStorage() ;
     }
 
     @PostMapping("greeting")
