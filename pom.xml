@@ -30,19 +30,43 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-layout-template-json</artifactId>
+			<version>2.23.1</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+			<version>3.3.1</version>
 		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+			<exclusion>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-logging</artifactId>
+			</exclusion>
+
+			</exclusions>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.google.cloud</groupId>
@@ -65,10 +89,11 @@
 				<configuration>
 					<to>
 						<image>educative/${project.artifactId}:s1</image>
+						<tags>
+							<tag>us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo</tag>
+						</tags>
 					</to>
-					<tags>
-						<tag>us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo</tag>
-					</tags>
+
 				</configuration>
 			</plugin>
 		</plugins>
