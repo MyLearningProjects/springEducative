@@ -43,8 +43,8 @@ jobs:
       run: mvn clean compile jib:build
     - name: GKE gcloud auth plugin install
       run: gcloud components install gke-gcloud-auth-plugin
-    # - name: Get kubectl credentials
-    #   run: gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c
+    - name: Get kubectl credentials
+      run: gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c
     # - name: Kubectl create secret
     #   run: kubectl create secret docker-registry gcr-access-token --docker-server=https://gcr.io --docker-username=gke_cool-subset-426206-j9_us-central1-c_my-first-cluster-1 --docker-password="$(gcloud auth print-access-token)" --docker-email=any@valid.email
     # - name: Patch secret with account
