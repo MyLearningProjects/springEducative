@@ -5,12 +5,13 @@
 replicaCount: 1
 
 image:
-  repository: us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo
+  repository: us-central1-docker.pkg.dev/cool-subset-426206-j9/docker-repo/educative
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "educative"
+  tag: "latest"
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: gcr-json-key
 nameOverride: ""
 fullnameOverride: ""
 
@@ -23,7 +24,8 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: ""
+  name: "educative-helm"
+
 
 podAnnotations: {}
 podLabels: {}
