@@ -51,8 +51,8 @@ jobs:
           --docker-username=oauth3accesstoken \
           --docker-password="$(gcloud auth print-access-token)" \
           --docker-email=any@valid.email
-    - name: Patch secret with account
-      run: kubectl patch serviceaccount gke_cool-subset-426206-j9_us-central1-c_my-first-cluster-1 -p '{"imagePullSecrets": [{"name": "gcr-json-key"}]}'
+    # - name: Patch secret with account
+    #   run: kubectl patch serviceaccount gke_cool-subset-426206-j9_us-central1-c_my-first-cluster-1 -p '{"imagePullSecrets": [{"name": "gcr-json-key"}]}'
     - name: Config details
       run: kubectl config view --raw
     - name: Kubectl test
