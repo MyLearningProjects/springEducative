@@ -16,7 +16,7 @@ public class AccessCloudStorage {
 
     Logger log = Logger.getLogger(getClass().getName());
 
-    @Value("gs://cool-subset-426206-j9/intJava.txt")
+    @Value("gs://cool-subset-426206-j9-bucket/intJava.txt")
     private Resource gcsResource;
 
     public String accessStorage(){
