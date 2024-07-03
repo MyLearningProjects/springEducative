@@ -24,7 +24,7 @@ public class AccessCloudStorage {
 
           Blob blob = storage.get(BlobId.of("cool-subset-426206-j9-bucket", "intJava.txt"));
 
-          System.out.println("file name::"+blob.getName() + "::::"+blob.getContentType());
+          System.out.println("file name::"+blob.getCreateTimeOffsetDateTime() + "::::"+blob.getContentType());
 
       }catch (Exception e ){
           System.out.println(e.getMessage());
